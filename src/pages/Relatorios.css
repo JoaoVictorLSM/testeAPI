@@ -1,0 +1,1019 @@
+.relatorios-page {
+    padding: 40px 20px 60px;
+    background-color: #F5F5F5;
+    margin-top: 90px;
+    min-height: calc(100vh - 90px);
+}
+
+.relatorios-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.relatorios-header {
+    margin-bottom: 40px;
+}
+
+.relatorios-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.relatorios-titulo {
+    font-size: 42px;
+    font-weight: 700;
+    color: #7A2FF5;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.relatorios-subtitulo {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.relatorios-filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.relatorios-periodo-select {
+    padding: 12px 40px 12px 15px;
+    border: 2px solid #E6DFFF;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    color: #3B2561;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233B2561' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.relatorios-periodo-select:focus {
+    outline: none;
+    border-color: #7A2FF5;
+    box-shadow: 0 0 0 3px rgba(122, 47, 245, 0.1);
+}
+
+.btn-exportar-relatorio {
+    background-color: #7A2FF5;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Ysabeau SC', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(122, 47, 245, 0.3);
+}
+
+.btn-exportar-relatorio:hover {
+    background-color: #6A4C9C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 47, 245, 0.4);
+}
+
+.btn-exportar-relatorio i {
+    font-size: 18px;
+}
+
+/* Cards de Métricas */
+.relatorios-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.relatorio-metric-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.relatorio-metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.relatorio-metric-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.relatorio-metric-icon-wrapper i {
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.relatorio-metric-card.metric-purple .relatorio-metric-icon-wrapper {
+    background-color: #F0E6FF;
+    color: #7A2FF5;
+}
+
+.relatorio-metric-card.metric-orange .relatorio-metric-icon-wrapper {
+    background-color: #FFE5D9;
+    color: #FF6B35;
+}
+
+.relatorio-metric-card.metric-green .relatorio-metric-icon-wrapper {
+    background-color: #D4EDDA;
+    color: #28A745;
+}
+
+.relatorio-metric-content {
+    flex: 1;
+}
+
+.relatorio-metric-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.relatorio-metric-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #3B2561;
+    margin-bottom: 8px;
+    font-family: 'Ysabeau SC', sans-serif;
+    line-height: 1;
+}
+
+.relatorio-metric-trend {
+    font-size: 12px;
+    color: #28A745;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.relatorio-metric-trend i {
+    font-size: 14px;
+}
+
+/* Tabs */
+.relatorios-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #E6DFFF;
+}
+
+.relatorio-tab {
+    background: none;
+    border: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Ysabeau SC', sans-serif;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.relatorio-tab i {
+    font-size: 16px;
+}
+
+.relatorio-tab:hover {
+    color: #7A2FF5;
+}
+
+.relatorio-tab.active {
+    color: #7A2FF5;
+    border-bottom-color: #7A2FF5;
+}
+
+/* Conteúdo */
+.relatorios-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.relatorio-section-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.relatorio-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3B2561;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.relatorio-section-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 25px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid 3 colunas */
+.relatorios-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Gráfico de Performance Financeira */
+.performance-financeira-chart {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F8F5FF;
+    border-radius: 8px;
+}
+
+.financeira-svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Gráfico de Pizza */
+.pie-chart-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.pie-chart-svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Gráfico de Ocupação por Horário */
+.ocupacao-chart-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F8F5FF;
+    border-radius: 8px;
+}
+
+.ocupacao-chart-svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Placeholders de gráficos (mantidos para compatibilidade) */
+.chart-placeholder {
+    background-color: #F8F5FF;
+    border-radius: 8px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #666;
+    font-family: Arial, sans-serif;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-placeholder p {
+    margin: 5px 0;
+}
+
+.chart-note {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+}
+
+.chart-placeholder-small {
+    background-color: #F8F5FF;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+    font-family: Arial, sans-serif;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Lista de Espécies */
+.especies-list {
+    margin-bottom: 20px;
+}
+
+.especie-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.especie-color-bar {
+    width: 4px;
+    height: 40px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.especie-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.especie-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3B2561;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.especie-percentual {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3B2561;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+/* Lista de Procedimentos */
+.procedimentos-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.procedimento-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #F8F5FF;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.procedimento-item:hover {
+    background-color: #F0E6FF;
+}
+
+.procedimento-numero {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #7A2FF5;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.procedimento-info {
+    flex: 1;
+}
+
+.procedimento-nome {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3B2561;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.procedimento-detalhes {
+    font-size: 12px;
+    color: #666;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid de Métricas Financeiras */
+.financeiro-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Grid de Métricas Operacionais */
+.operacional-metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tabela de Departamentos */
+.departamentos-table {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.operacional-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.operacional-table thead {
+    background-color: #F8F5FF;
+}
+
+.operacional-table th {
+    padding: 15px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3B2561;
+    text-transform: uppercase;
+    border-bottom: 2px solid #E6DFFF;
+}
+
+.operacional-table tbody tr {
+    border-bottom: 1px solid #E6DFFF;
+    transition: background-color 0.3s ease;
+}
+
+.operacional-table tbody tr:hover {
+    background-color: #F8F5FF;
+}
+
+.operacional-table td {
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #3B2561;
+}
+
+.departamento-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.departamento-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #F0E6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7A2FF5;
+    font-size: 18px;
+}
+
+.departamento-nome {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.departamento-value {
+    font-weight: 600;
+    color: #666;
+}
+
+.satisfacao-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.satisfacao-value {
+    font-weight: 700;
+    color: #3B2561;
+    min-width: 50px;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.satisfacao-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #E6DFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 150px;
+}
+
+.satisfacao-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28A745 0%, #48C765 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Gráfico de Eficiência */
+.eficiencia-chart-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F8F5FF;
+    border-radius: 8px;
+}
+
+.eficiencia-chart-svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Comparativo de Atendimentos */
+.atendimentos-comparativo-chart {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.atendimento-comparativo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.atendimento-comparativo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.atendimento-comparativo-nome {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3B2561;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.atendimento-comparativo-valor {
+    font-size: 16px;
+    font-weight: 700;
+    color: #7A2FF5;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.atendimento-comparativo-bar-container {
+    width: 100%;
+    height: 30px;
+    background-color: #E6DFFF;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.atendimento-comparativo-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7A2FF5 0%, #9D5FF5 100%);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    min-width: 20px;
+}
+
+/* Gráfico de Receita por Especialidade */
+.relatorio-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.relatorio-section-title i {
+    margin-right: 10px;
+    color: #FF6B35;
+}
+
+.especialidades-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.especialidade-bar-item {
+    display: grid;
+    grid-template-columns: 180px 1fr 120px;
+    gap: 20px;
+    align-items: center;
+}
+
+.especialidade-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3B2561;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.especialidade-bar-container {
+    background-color: #F0E6FF;
+    border-radius: 8px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.especialidade-bar {
+    background: linear-gradient(90deg, #FF6B35 0%, #FF8C5A 100%);
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.5s ease;
+    min-width: 20px;
+}
+
+.especialidade-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3B2561;
+    text-align: right;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+/* Radar Chart */
+.radar-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.radar-chart {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+}
+
+.radar-legend {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.radar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radar-legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.radar-legend-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3B2561;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+/* Gráfico de Atendimentos por Especialidade */
+.atendimentos-chart {
+    margin-top: 30px;
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 40px;
+}
+
+.atendimentos-chart-bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 20px;
+    height: 300px;
+    position: relative;
+}
+
+.atendimento-bar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.atendimento-bar-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+.atendimento-bar {
+    width: 80%;
+    max-width: 80px;
+    background: linear-gradient(180deg, #7A2FF5 0%, #9D5FF5 100%);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    min-height: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.atendimento-bar:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.atendimento-bar-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.atendimento-bar-label {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3B2561;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    line-height: 1.3;
+}
+
+.atendimentos-chart-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+    height: 300px;
+}
+
+.atendimentos-chart-axis span {
+    font-size: 11px;
+    color: #999;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .relatorios-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .financeiro-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .operacional-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .operacional-table {
+        font-size: 12px;
+    }
+
+    .operacional-table th,
+    .operacional-table td {
+        padding: 12px 10px;
+    }
+
+    .eficiencia-chart-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .relatorios-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .especialidade-bar-item {
+        grid-template-columns: 150px 1fr 100px;
+        gap: 15px;
+    }
+
+    .radar-chart {
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .atendimentos-chart {
+        padding-left: 50px;
+    }
+
+    .atendimentos-chart-bars {
+        height: 250px;
+    }
+
+    .performance-financeira-chart,
+    .ocupacao-chart-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .pie-chart-svg {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .relatorios-page {
+        margin-top: 70px;
+        padding: 30px 15px 40px;
+    }
+
+    .relatorios-titulo {
+        font-size: 28px;
+    }
+
+    .relatorios-header-content {
+        flex-direction: column;
+    }
+
+    .relatorios-filters {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .relatorios-periodo-select,
+    .btn-exportar-relatorio {
+        width: 100%;
+    }
+
+    .relatorios-metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .financeiro-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .operacional-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .operacional-table {
+        font-size: 11px;
+    }
+
+    .operacional-table th,
+    .operacional-table td {
+        padding: 10px 8px;
+    }
+
+    .departamento-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .departamento-nome {
+        font-size: 12px;
+    }
+
+    .eficiencia-chart-container {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .atendimento-comparativo-nome {
+        font-size: 12px;
+    }
+
+    .atendimento-comparativo-valor {
+        font-size: 14px;
+    }
+
+    .especialidade-bar-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .especialidade-label {
+        order: 1;
+    }
+
+    .especialidade-bar-container {
+        order: 2;
+    }
+
+    .especialidade-value {
+        order: 3;
+        text-align: left;
+    }
+
+    .relatorios-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .relatorio-tab {
+        white-space: nowrap;
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+
+    .radar-chart {
+        max-width: 350px;
+        height: 350px;
+    }
+
+    .radar-legend {
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .atendimentos-chart {
+        padding-left: 40px;
+    }
+
+    .atendimentos-chart-bars {
+        height: 200px;
+        gap: 10px;
+    }
+
+    .atendimento-bar {
+        width: 60%;
+        max-width: 60px;
+    }
+
+    .atendimento-bar-label {
+        font-size: 10px;
+    }
+
+    .performance-financeira-chart,
+    .ocupacao-chart-container {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .pie-chart-svg {
+        max-width: 150px;
+    }
+}
